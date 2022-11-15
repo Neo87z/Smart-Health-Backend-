@@ -1,0 +1,32 @@
+import pickle
+import pprint
+import numpy as np 
+import pandas as pd
+import matplotlib.pyplot as plt
+
+import re, os
+os.environ["SM_FRAMEWORK"] = "tf.keras"
+
+from tqdm import tqdm       
+import seaborn as sns
+import matplotlib.pyplot as plt  # visualizations                                          
+
+from nltk import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import RegexpTokenizer
+
+from sklearn.utils import shuffle   #data manipulation
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split 
+    
+import tensorflow as tf     
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.activations import relu
+from tensorflow.keras.models import load_model, Model
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.layers import Input, Dropout, LSTM, Bidirectional, GRU, Dense, Embedding, BatchNormalization
+
+np.random.seed(1234)
+tf.random.set_seed(1234)
